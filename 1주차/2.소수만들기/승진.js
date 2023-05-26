@@ -63,6 +63,7 @@ function isPrime(value){
 
 function solution(nums) {
   let answer = 0;
+  
   // 세 숫자의 조합
   for (let i = 0; i < nums.length; i++) {
     for (let j = i + 1; j < nums.length; j++) {
