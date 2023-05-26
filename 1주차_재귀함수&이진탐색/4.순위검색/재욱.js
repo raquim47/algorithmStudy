@@ -1,11 +1,24 @@
-// 순위 검색
-// 문제 출처 : https://school.programmers.co.kr/learn/courses/30/lessons/72412?language=javascript
-
-// 지시사항 : 프로그래머스 링크 참고
-// * 이진 탐색
-
 function solution(info, query) {
   var answer = [];
+
+  let info_list = [];
+  let query_list = [];
+  for (i of info) {
+    info_list.push(i.split(" "));
+  }
+  for (q of query) {
+    query_list.push(q.split(" ").filter((s) => s !== "and"));
+  }
+
+  for (qr of query_list) {
+    for (let i = 0; i < qr.length; i++) {
+      
+    }
+  }
+
+  console.log(info_list);
+  console.log(query_list);
+  
   return answer;
 }
 
