@@ -8,7 +8,7 @@ function solution(n, times) {
   const sortedTimes = times.sort((a, b) => a - b);
   let minTime = sortedTimes[0]; 
   let maxTime = sortedTimes[sortedTimes.length - 1] * n;
-  while (minTime < maxTime) {
+  while (minTime <= maxTime) {
     let midTime = Math.floor((minTime + maxTime) / 2);
     let passedCount = 0;
 
