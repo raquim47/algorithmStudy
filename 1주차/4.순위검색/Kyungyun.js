@@ -6,8 +6,43 @@
 
 function solution(info, query) {
   var answer = [];
+  var quarr = [];
+
+  for(let i = 0; i < query.length; i++){
+      quarr.push(query[i].split(" and "));
+  }
+
+  for(let i = 0; i < quarr.length; i++){
+      let count = 0;
+      for(let j = 0; j < info.length; j++){
+          let check = true;
+          let temp = info[j].split(" ");
+          let last_quarr = quarr[i][3].split(" ");
+          for(let k = 0; k < 4; k++){
+              if(k === 3){
+                  if(!(temp[k] === last_quarr[0] || last_quarr[0] === '-')) {
+                      check = false;
+                      break;
+                  }
+                  if(!(Number(temp[4]) >= Number(last_quarr[1]))) {
+                      check = false;
+                      break;
+                  }
+              }
+              else {
+                  if(!(temp[k] === quarr[i][k] || quarr[i][k] === '-')) {
+                      check = false;
+                      break;
+                  }
+              }
+          }
+          if(check) count++;
+      }
+      answer.push(count);
+  }
   return answer;
 }
+
 
 console.log(
   solution(

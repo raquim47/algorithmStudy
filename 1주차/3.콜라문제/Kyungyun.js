@@ -5,9 +5,23 @@
 // * 재귀함수 활용할 것!
 
 function solution(a, b, n) {
-  let answer = 0;
-
-  return answer;
+  if(n < a){
+    return 0;
+  }
+  
+  return b + solution(a, b, n - a + b);
 }
+
+// function solution(a, b, n) {
+//   var answer = 0;
+//   while (n >= a){
+//       let exchange = Math.floor(n / a);
+//       answer += exchange * b;
+//       n=exchange * b + n % a;
+      
+//   }
+//   return answer;
+// }
+
 console.log(solution(2, 1, 20)); //19
 // console.log(solution(3, 1, 20)); //	9
