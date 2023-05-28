@@ -8,11 +8,11 @@ const binarySearch = (arr, target) => {
   let right = arr.length - 1;
 
   while (left <= right) {
-    const mid = Math.floor((left + right) / 2);// 중간 인덱스 계산
+    const mid = Math.floor((left + right) / 2);
     if (arr[mid] < target) {
-      left = mid + 1;// 탐색 범위를 오른쪽 절반으로 변경
+      left = mid + 1;
     } else {
-      right = mid - 1;// 탐색 범위를 왼쪽 절반으로 변경
+      right = mid - 1;
     }
   }
   
@@ -23,7 +23,6 @@ function solution(info, query) {
   let answer = [];
   const obj = {};
 
-  // obj : 점수를 제외한 문자열을 공백없이 key로 넣고, 마지막 점수값을 배열에 담아 value로 
   info.forEach(infoString => {
     const infoArr = infoString.split(' ');
     const score = Number(infoArr.pop());
@@ -34,7 +33,6 @@ function solution(info, query) {
     obj[key].push(score);
   });
 
-  // obj의 value(점수 배열를 오름차순으로 정렬.
   for (const key in obj) {
     obj[key].sort((a, b) => a - b);
   }
