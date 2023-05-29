@@ -12,4 +12,4 @@ function solution(n, times) {
   return answer;
 }
 
-console.log(solution([6, 10])); // 28
+console.log(solution(6, [7, 10])); // 28
