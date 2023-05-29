@@ -1,12 +1,12 @@
 function solution(a, b, n) {
   var answer = 0;
-  // 1. a * parseInt(n/a)병을 들고가서 parseInt(n/a)병의 콜라를 받음 -> (n - (a * parseInt(n/a)) + parseInt(n/a))병(= a^) 보유, answer += parseInt(n/a)
-  // 2. a * parseInt(a^/a)병을 들고가서 parseInt(a^/a)병의 콜라를 받음 -> (a^ - (a * parseInt(a^/a)) + parseInt(a^/a))병(= a^^) 보유, answer += parseInt(a^/a)
-  // 3. a * parseInt(a^^/a)병을 들고가서 parseInt(a^^/a)병의 콜라를 받음 -> (a^^ - (a * parseInt(a^^/a)) + parseInt(a^^/a))병(= a^^^) 보유, answer += parseInt(a^^/a)
+  // 1. a * (b*parseInt(n/a))병을 들고가서 b*parseInt(n/a)병의 콜라를 받음 -> (n - (a * (b*parseInt(n/a))) + b*parseInt(n/a))병(= a^) 보유, answer += parseInt(n/a)
+  // 2. a * (b*parseInt(a^/a))병을 들고가서 b*parseInt(a^/a)병의 콜라를 받음 -> (a^ - (a * parseInt(a^/a)) + parseInt(a^/a))병(= a^^) 보유, answer += parseInt(a^/a)
+  // 3. a * (b*parseInt(a^^/a))병을 들고가서 b*parseInt(a^^/a)병의 콜라를 받음 -> (a^^ - (a * parseInt(a^^/a)) + parseInt(a^^/a))병(= a^^^) 보유, answer += parseInt(a^^/a)
   function helpFunc(coke) {
     if (coke < a) return;
-    let giveCoke = a * parseInt(coke/a);
-    let receiveCoke = parseInt(coke/a);
+    let giveCoke = b*(a * parseInt(coke/a));
+    let receiveCoke = b*parseInt(coke/a);
     // coke -= a * parseInt(coke/a);
     answer += receiveCoke;
     return helpFunc(coke - giveCoke + receiveCoke);
