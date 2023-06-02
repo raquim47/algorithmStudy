@@ -27,6 +27,15 @@ function solution(info, query) {
   return answer;
 }
 
+const getResult = (obj, query, score) => {
+  const infoObjKey = Object.keys(obj);
+  // console.log(infoObjKey);
+  return infoObjKey
+    .filter(key => query.every(v => key.includes(v)))  // infoObjKey 요소 중 query 배열의 모든 요소를 포함하는것만 반환
+    .reduce((total, key) => total + obj[key].length - binarySearch(obj[key], score), 0);
+    // 해당 key의 값인 배열의 총 길이에서 이분 탐색으로 얻은 인덱스를 빼면 값이 score 이상인 요소의 수. 이걸 누산
+}
+
 const binarySearch = (arr, target) => {
   let start = 0;
   let end = arr.length - 1;
@@ -41,17 +50,9 @@ const binarySearch = (arr, target) => {
 }
 // ex)
 // arr = [2, 4, 5, 8, 12, 13]
-// target = 7  ->  middle : 3  ->  arr[middle] : 8
-// target = 9  ->  middle : 3  ->  arr[middle] : 8
+// target = 7  ->  start : 3   middle : 2   end : 2  ->  arr[middle] : 5
+// target = 9  ->  start : 4   middle : 3   end : 3  ->  arr[middle] : 8
 
-const getResult = (obj, query, score) => {
-  const infoObjKey = Object.keys(obj);
-  // console.log(infoObjKey);
-  return infoObjKey
-    .filter(key => query.every(v => key.includes(v)))  // infoObjKey 요소 중 query 배열의 모든 요소를 포함하는것만 반환
-    .reduce((total, key) => total + obj[key].length - binarySearch(obj[key], score), 0);  
-    // 해당 key의 값인 배열의 총 길이에서 이분 탐색으로 얻은 인덱스를 빼면 값이 score 이상인 요소의 수. 이걸 누산
-}
 
 console.log(
   solution(
