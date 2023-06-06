@@ -27,6 +27,7 @@ function solution(info, query) {
   return answer;
 }
 
+// 문의조건을 만족하는 사람의 수를 구하는 함수
 const getResult = (obj, query, score) => {
   const infoObjKey = Object.keys(obj);
   // console.log(infoObjKey);

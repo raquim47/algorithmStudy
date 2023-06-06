@@ -31,7 +31,7 @@ function solution(n, times) {
     }
     else start = middle + 1;
     middle = Math.floor((start + end) / 2);
-    console.log(`p : ${people} - ans : ${answer}`);
+    // console.log(`p : ${people} - ans : ${answer}`);
   }
   
   return answer;
