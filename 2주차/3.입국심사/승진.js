@@ -4,8 +4,11 @@
 // 지시사항 : 프로그래머스 링크 참고
 // * 이진 탐색
 //  O(M *log N)
+
+// 6, [7, 10]
 function solution(n, times) {
   const sortedTimes = times.sort((a, b) => a - b);
+
   let minTime = sortedTimes[0]; 
   let maxTime = sortedTimes[sortedTimes.length - 1] * n;
   while (minTime <= maxTime) {
@@ -15,6 +18,7 @@ function solution(n, times) {
     for (const time of sortedTimes) {
       passedCount += Math.floor(midTime / time);
     }
+    
     console.log(minTime, maxTime, midTime, passedCount)
     if (passedCount >= n) {
       maxTime = midTime - 1;
