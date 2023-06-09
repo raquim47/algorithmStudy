@@ -21,10 +21,10 @@ function solution(array, n) {
   // array[left]는 n보다 크거나 같은 값을 가리킨다
   
   // left === 0인 경우 array에서 n가 가장 가까운 값은 array[0], 즉 array[left]가 된다.
+  console.log(left, right, n)
   if(array[left] === n || left === 0){
     return array[left];
   }
-
   // left, left - 1번째 요소 중에 n과 가까운 수 찾기
   if(array[left] - n < n - array[left - 1]){
     return array[left]
@@ -33,6 +33,6 @@ function solution(array, n) {
   }
 }
 
-console.log(solution( [1, 3, 5, 7] , 6)); //5
-// console.log(solution([10, 15, 18], 16)); //12
+// console.log(solution( [1, 3, 5, 7] , 6)); //5
+console.log(solution([10, 15, 18], 16)); //15
 // console.log(solution([10, 11, 12], 13)); //12

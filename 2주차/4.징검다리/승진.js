@@ -9,17 +9,18 @@ function solution(distance, rocks, n) {
   
   while (left <= right) {
     let mid = Math.floor((left + right) / 2);
-    let prevRock = 0;
+    let flag = 0;
     let removeCount = 0;
 
     for (let i = 0; i < rocks.length; i++) {
-      const gap = rocks[i] - prevRock;
+      const gap = rocks[i] - flag;
       if (gap < mid) {
         removeCount++;
       } else {;
-        prevRock = rocks[i];
+        flag = rocks[i];
       }
     }
+
     if (removeCount > n) {
       right = mid - 1;
     } else {
@@ -27,6 +28,7 @@ function solution(distance, rocks, n) {
     }
     console.log(left, right, mid, removeCount)
   }
+  
   return right;
 }
 
