@@ -3,8 +3,10 @@
 // * 정렬 알고리즘을 사용할 것
 
 function solution(citations) {
-  var answer = 0;
+  let answer = 0;
   return answer;
 }
 
 console.log(solution([3, 0, 6, 1, 5])); // 3
+// console.log(solution([3, 2, 2, 5, 0, 6, 1, 5, 4, 5])); // 3
+// console.log(solution([5, 5, 5, 5])); // 4
