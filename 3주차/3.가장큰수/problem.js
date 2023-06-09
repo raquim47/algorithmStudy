@@ -3,8 +3,7 @@
 // * 정렬 알고리즘을 사용할 것
 
 function solution(numbers) {
-  var answer = '';
-  return answer;
+
 }
 
 console.log(solution([6, 10, 2])); // "6210"

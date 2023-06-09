@@ -3,7 +3,8 @@
 // * 정렬 알고리즘을 사용할 것
 
 function solution(strings, n) {
-
+  var answer = [];
+  return answer;
 }
 
 console.log(solution(['sun', 'bed', 'car'], 1)); //["car", "bed", "sun"]
