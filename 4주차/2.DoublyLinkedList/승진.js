@@ -5,7 +5,6 @@
 // reverse 실행 뒤엔 <head> 5 <-> 4 <-> 3 <-> 2 <-> 1 <tail> 로 바뀌어야 합니다.
 
 // print()를 실행하여 현재 리스트의 노드를 어레이 형식으로 확인할 수 있습니다.
-
 class Node {
   constructor(val) {
     this.val = val;

@@ -181,5 +181,5 @@ list.push(2);
 list.push(3);
 list.push(4);
 list.push(5);
-list.rotate(-1);
+list.rotate(-2);
 list.print();
