@@ -9,12 +9,11 @@ function solution(sizes) {
 
   for(let i = 0; i < sizes.length; ++i) {
     sizes[i].sort((a, b) => a - b);
-    before.push(sizes[i][0]); // 더 좋은 방법이 있을까?
+    before.push(sizes[i][0]); // 더 좋은 방법이 있을것같은데...
     after.push(sizes[i][1]);
   }
 
   const beforeMax = Math.max(...before);
   const afterMax = Math.max(...after);
-
   return beforeMax * afterMax;
 }
